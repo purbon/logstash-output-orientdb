@@ -8,7 +8,7 @@ module OrientDB
 
     def initialize(config)
       @config = config
-      @conn ||= Faraday.new(:url => config['server']) do |faraday|
+      @conn ||= Faraday.new(:url => config['url']) do |faraday|
         faraday.request  :url_encoded
         faraday.response :logger
         faraday.adapter  Faraday.default_adapter
